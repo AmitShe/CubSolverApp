@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    tools:context=".instructions_Camera">
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView3" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="- choose a side to capture (1)\n- place the cube to match the grid (2)\n- press &quot;capture&quot; (3)\n- if didn&apos;t capture the whole side, press &quot;captue&quot; agein\n- if you need to reset capture, press &quot;clear side&quot; (4)\n- repeat for all sides\n- whan all sides are done you can press to solve (5)\n"
+                android:id="@+id/textView3"
+                android:layout_centerHorizontal="true"
+                android:textSize="20dp"
+                android:textColor="#000000" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="360dp"
+                android:id="@+id/imageView4"
+                android:src="@mipmap/camera_mark"
+                android:layout_below="@+id/textView3" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Close"
+                android:id="@+id/button3"
+                android:onClick="close_camera_Window"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/imageView4"
+                android:layout_alignParentBottom="true" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>

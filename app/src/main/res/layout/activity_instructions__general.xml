@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    tools:context=".instructions_General">
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="- When looking at a cube, we refer to each side by the color of the center tile\n\n - To paint a side, hold the cube so that the side you are painting is in front, and on the top the suggested side, as presented on the screen\n\nFor example, when painting the yellow side, the top needs to be the blue side, so you need to hold the cube like this:\n"
+                android:id="@+id/textView"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:textColor="#000000"
+                android:textSize="20dp" />
+
+            <ImageView
+                android:id="@+id/clean_cube"
+                android:layout_below="@+id/textView"
+                android:src="@mipmap/clean_cube2"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:scaleType="fitCenter"
+                android:layout_centerHorizontal="true" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="\n	and paint the side like this:\n"
+                android:id="@+id/textView2"
+                android:layout_below="@+id/clean_cube"
+                android:textColor="#000000"
+                android:textSize="20dp" />
+
+            <ImageView
+                android:id="@+id/screen_shot"
+                android:layout_below="@+id/textView2"
+                android:src="@mipmap/screen_shot2"
+                android:layout_width="280dp"
+                android:layout_height="280dp"
+                android:scaleType="fitCenter"
+                android:layout_centerHorizontal="true" />
+
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="close"
+                android:id="@+id/close"
+                android:layout_centerHorizontal="true"
+                android:onClick="closeWindow"
+                android:layout_below="@+id/screen_shot" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>
