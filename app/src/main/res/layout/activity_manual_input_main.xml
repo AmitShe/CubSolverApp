@@ -318,8 +318,8 @@
         android:id="@+id/button"
         android:layout_below="@+id/button22"
         android:layout_alignLeft="@+id/button02"
-        android:onClick="showSolusion"
-        android:visibility="invisible" />
+        android:onClick="showSolusion"/>
+        <!--android:visibility="invisible" />-->
 
     <Button
         android:layout_width="70dp"

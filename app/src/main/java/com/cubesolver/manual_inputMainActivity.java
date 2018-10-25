@@ -18,12 +18,10 @@ import java.io.OutputStreamWriter;
 
 public class manual_inputMainActivity extends AppCompatActivity {
 
-
     private full_cube gameCube = new full_cube();
     private enum_color colorSelect = enum_color.GRAY;
     private enum_color sideSelect = enum_color.GRAY;
     private boolean orangeReady = false, redReady = false, whiteReady = false, yellowReady = false, blueReady = false, greenReady = false;
-
 
     public void setColorSelect(enum_color selectedColor) {
         this.colorSelect = selectedColor;
@@ -56,24 +54,16 @@ public class manual_inputMainActivity extends AppCompatActivity {
 
         setTitle("Cube Solver - Manual Input");
 
-
         TextView color_select_headline = (TextView) findViewById(R.id.color_select_headline);
         color_select_headline.setPaintFlags(color_select_headline.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
     }
 
-
     public void setTile(View v) {
-        //        android:id="@+id/button10"
-        //int selectedTile = v.getId();
         String selectedTile = v.getResources().getResourceName(v.getId());
-        //selectedTile = selectedTile.substring(31);
-        //String x = selectedTile.substring(6,7);
-        //String y = selectedTile.substring(7);
-        String x = selectedTile.substring(37, 38);
-        String y = selectedTile.substring(38);
+        String x = selectedTile.substring(24, 25);
+        String y = selectedTile.substring(25);
         int XValue = Integer.parseInt(x);
         int YValue = Integer.parseInt(y);
-        //(((TextView) findViewById(R.id.color_select_headline))).setText("Tile select x=" + Integer.toString(XValue) + " y=" + Integer.toString(YValue)); // for testing  ! ! !
         if (colorSelect == enum_color.GRAY || sideSelect == enum_color.GRAY) {
             (((TextView) findViewById(R.id.color_select_headline))).setText("Error ! ! ! !"); // for testing  ! ! !
         } else {
@@ -113,7 +103,6 @@ public class manual_inputMainActivity extends AppCompatActivity {
                 break;
         }
     }
-
 
     private boolean cubeReady() {
         if (orangeReady == true && redReady == true && whiteReady == true && yellowReady == true && blueReady == true && greenReady == true)
@@ -180,7 +169,6 @@ public class manual_inputMainActivity extends AppCompatActivity {
                 break;
         }
         (((TextView) findViewById(R.id.color_select_headline))).setText("color select " + colorSelect.name()); // for testing  ! ! !
-
     }
 
     public void sideSelect(View v) {
@@ -223,23 +211,18 @@ public class manual_inputMainActivity extends AppCompatActivity {
         // TO DO ! ! !
         // add updeteTileColorOnScreen (enum_color color){
         updeteTileColorOnScreen(sideSelect);
-
     }
-
 
     public void updetePressTile(int XValue, int YValue, enum_color color, int buttonID) {
         Button selectedButom = (Button) findViewById(buttonID);
         selectedButom.getBackground().setColorFilter(enum_color.colorToRGB(color), PorterDuff.Mode.MULTIPLY);
-
     }
-
 
     public void setGameCubeTile(enum_color side, int tileX, int tileY, enum_color color) {
         (gameCube.getSide(side)).setSideTiles(tileX, tileY, color);
 
         //Button selectedButom = (Button) findViewById(R.id.buttonSolve); // for testing  ! ! !
         //selectedButom.getBackground().setColorFilter(enum_color.colorToRGB(gameCube.getSide(side).getsideColor()), PorterDuff.Mode.MULTIPLY); // for testing  ! ! !
-
     }
 
     public void updeteTileColorOnScreen(enum_color color) {
@@ -253,19 +236,9 @@ public class manual_inputMainActivity extends AppCompatActivity {
                 int resID = getResources().getIdentifier(buttonID, "id", this.getPackageName());
                 Button selectedButtom = (Button) findViewById(resID);
                 // (((TextView) findViewById(R.id.side_headline))).setText(selectedButom.getText()); // for testing  ! ! !
-
                 selectedButtom.getBackground().setColorFilter(enum_color.colorToRGB(gameCube.getSide(color).getSideTiles(x, y)), PorterDuff.Mode.MULTIPLY);
-
-                /*
-                 public enum_color getGameCubeTile(enum_color side, int tileX, int tileY){
-      return   (gameCube.getSide(side)).getSideTiles(tileX, tileY);
-    }
-                 */
-
-
             }
         }
-
     }
 
     // for testing
@@ -275,15 +248,12 @@ public class manual_inputMainActivity extends AppCompatActivity {
         updeteTileColorOnScreen(sideSelect);
     }
 
-
     public void solveTheCube(View v) {
         cube_service service = new cube_service();
         String solution = service.solveTheCube(gameCube);
 
         TextView headline = (TextView) findViewById(R.id.headline);
         headline.setText(solution);
-
-
     }
 
     public void showSolusion(View v) {
@@ -297,7 +267,6 @@ public class manual_inputMainActivity extends AppCompatActivity {
         Intent intent = new Intent(v.getContext(), instructions_Manual.class);
         startActivityForResult(intent, 0);
     }
-
 
     public void solveTheCube_test(View v) throws IOException {
         String solution;

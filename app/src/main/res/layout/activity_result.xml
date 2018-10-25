@@ -4,116 +4,139 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="16dp"
     android:paddingLeft="16dp"
-    android:paddingRight="16dp"
     android:paddingTop="16dp"
-    tools:context=".result_Activity">
+    android:paddingRight="16dp"
+    android:paddingBottom="16dp"
+    tools:context=".result_Activity"
+    tools:layout_editor_absoluteY="81dp">
 
     <ScrollView
         android:id="@+id/SCROLLER_ID"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:scrollbars="vertical"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/robotButton"
         android:layout_below="@+id/radioGroup"
         android:fillViewport="true"
-        android:layout_above="@+id/robotButton">
+        android:scrollbars="vertical"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
         android:layout_above="@+id/button2" />
 
         <TextView
+            android:id="@+id/result_text"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:id="@+id/result_text"
+            android:paddingTop="30dp"
             android:layout_below="@+id/radioGroup"
-            android:layout_alignParentEnd="true"/>
+            android:layout_alignParentEnd="true"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
     </ScrollView>
 
 
     <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/radioGroup"
-        android:orientation="horizontal"
+        android:layout_width="320dp"
+        android:layout_height="29dp"
         android:layout_below="@+id/textView2"
+        android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
-
-        <RadioButton android:id="@+id/radio_normal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Normal mode"
-            android:onClick="onRadioButtonClicked"
-            android:checked="false" />
-
-        <RadioButton android:id="@+id/radio_expert"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Expert mode"
-            android:onClick="onRadioButtonClicked"/>
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="62dp">
 
         <RadioButton
+            android:id="@+id/radio_normal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Robot"
+            android:checked="false"
+            android:onClick="onRadioButtonClicked"
+            android:text="Normal mode" />
+
+        <RadioButton
+            android:id="@+id/radio_expert"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onRadioButtonClicked"
+            android:text="Expert mode" />
+
+        <RadioButton
             android:id="@+id/radio_robot"
-            android:onClick="onRadioButtonClicked" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onRadioButtonClicked"
+            android:text="Robot" />
     </RadioGroup>
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="choose view mode:"
         android:id="@+id/textView2"
-        android:layout_alignParentTop="true"
-        android:layout_alignRight="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
         android:layout_alignEnd="@+id/radioGroup"
-        android:layout_alignParentLeft="true"
+        android:layout_alignRight="@+id/radioGroup"
         android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="12dp"
         android:scrollIndicators="right"
-        android:textStyle="normal"
+        android:text="choose view mode:"
         android:textIsSelectable="false"
-        android:textSize="18dp" />
+        android:textSize="18dp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toTopOf="@+id/radioGroup"
+        app:layout_constraintTop_toTopOf="@+id/SCROLLER_ID"
+        app:layout_constraintVertical_bias="1.0"
+        tools:layout_editor_absoluteX="16dp" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="let the robot solve ! ! !"
         android:id="@+id/robotButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/SCROLLER_ID"
+        android:layout_alignRight="@+id/SCROLLER_ID"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/SCROLLER_ID"
-        android:layout_alignEnd="@+id/SCROLLER_ID"
+        android:layout_marginTop="404dp"
+        android:onClick="robotPress"
+        android:text="let the robot solve ! ! !"
         android:visibility="invisible"
-        android:onClick="robotPress" />
+        app:layout_constraintTop_toTopOf="@+id/SCROLLER_ID"
+        tools:layout_editor_absoluteX="78dp" />
 
     <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="     Next     "
         android:id="@+id/nextButton"
-        android:layout_below="@+id/SCROLLER_ID"
-        android:layout_alignRight="@+id/SCROLLER_ID"
-        android:layout_alignEnd="@+id/SCROLLER_ID"
-        android:visibility="invisible"
-        android:onClick="nextPress" />
-
-    <Button
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="   previos   "
-        android:id="@+id/prevButtom"
-        android:layout_alignBottom="@+id/robotButton"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
+        android:layout_below="@+id/SCROLLER_ID"
+        android:layout_alignEnd="@+id/SCROLLER_ID"
+        android:layout_alignRight="@+id/SCROLLER_ID"
+        android:layout_marginTop="120dp"
+        android:onClick="nextPress"
+        android:text="     Next     "
         android:visibility="invisible"
-        android:onClick="prevPress" />
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup"
+        tools:layout_editor_absoluteX="244dp" />
+
+    <Button
+        android:id="@+id/prevButtom"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="54dp"
+        android:layout_alignBottom="@+id/robotButton"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="120dp"
+        android:onClick="prevPress"
+        android:text="   previos   "
+        android:visibility="invisible"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup"
+        tools:layout_editor_absoluteX="16dp" />
 
 </android.support.constraint.ConstraintLayout>
