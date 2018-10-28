@@ -1,13 +1,296 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:opencv="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="16dp"
-    android:paddingLeft="16dp"
-    android:paddingRight="16dp"
-    android:paddingTop="16dp"
+    android:layout_height="wrap_content"
     tools:context=".camera_input">
 
-</android.support.constraint.ConstraintLayout>
+
+    <Button
+        android:id="@+id/take_pictue_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/button22"
+
+        android:layout_alignRight="@+id/button22"
+        android:layout_alignBottom="@+id/green_select"
+        android:layout_alignParentBottom="false"
+        android:enabled="false"
+        android:nestedScrollingEnabled="false"
+        android:onClick="captureSide"
+        android:text="  Capture  " />
+
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/button00"
+        android:layout_alignTop="@+id/button20"
+        android:layout_alignRight="@+id/button22"
+        android:layout_alignBottom="@+id/button22"
+        android:src="@mipmap/black_backround" />
+
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/frameLayout"
+        android:layout_width="320dp"
+        android:layout_height="320dp"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="false"
+        android:layout_centerHorizontal="true">
+
+
+        <org.opencv.android.JavaCameraView
+            android:id="@+id/HelloOpenCvView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            opencv:camera_id="any"
+            opencv:show_fps="false" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="bottom|left"
+            android:src="@mipmap/grid" />
+
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/button20"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/frameLayout"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:enabled="false"
+        android:textSize="4dp" />
+
+    <Button
+        android:id="@+id/button21"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/button20"
+        android:layout_alignStart="@+id/button20"
+        android:layout_alignLeft="@+id/button20"
+        android:enabled="false"
+        android:textSize="4dp" />
+
+    <Button
+        android:id="@+id/button22"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/button21"
+        android:layout_alignStart="@+id/button21"
+        android:layout_alignLeft="@+id/button21"
+        android:enabled="false"
+        android:textSize="4dp" />
+
+    <Button
+        android:id="@+id/button10"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignTop="@+id/button20"
+        android:layout_toStartOf="@+id/button20"
+        android:layout_toLeftOf="@+id/button20"
+        android:enabled="false"
+        android:textSize="4dp" />
+
+    <Button
+        android:id="@+id/button11"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignTop="@+id/button21"
+        android:layout_toStartOf="@+id/button21"
+        android:layout_toLeftOf="@+id/button21"
+        android:enabled="false"
+        android:textSize="4dp" />
+
+    <Button
+        android:id="@+id/button12"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignTop="@+id/button22"
+        android:layout_toStartOf="@+id/button22"
+        android:layout_toLeftOf="@+id/button22"
+        android:enabled="false"
+        android:textSize="4dp" />
+
+    <Button
+        android:id="@+id/button00"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignTop="@+id/button10"
+        android:layout_toStartOf="@+id/button10"
+        android:layout_toLeftOf="@+id/button10"
+        android:enabled="false"
+        android:textSize="4dp" />
+
+    <Button
+        android:id="@+id/button01"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignTop="@+id/button11"
+        android:layout_toStartOf="@+id/button11"
+        android:layout_toLeftOf="@+id/button11"
+        android:enabled="false"
+        android:textSize="4dp" />
+
+    <Button
+        android:id="@+id/button02"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignTop="@+id/button12"
+        android:layout_toStartOf="@+id/button12"
+        android:layout_toLeftOf="@+id/button12"
+        android:enabled="false"
+        android:textSize="4dp" />
+
+    <Button
+        android:id="@+id/red_select"
+        android:layout_width="70dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/white_select"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="false"
+        android:backgroundTint="#FF0000"
+        android:onClick="sideSelect"
+        android:text="RED SIDE"
+        android:textSize="11dp" />
+
+    <Button
+        android:id="@+id/orange_select"
+        android:layout_width="70dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/side_select_text"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:backgroundTint="#ff6f00"
+        android:onClick="sideSelect"
+        android:text="ORANGE SIDE"
+        android:textSize="11dp" />
+
+    <Button
+        android:id="@+id/yellow_select"
+        android:layout_width="70dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/white_select"
+        android:layout_toEndOf="@+id/red_select"
+        android:layout_toRightOf="@+id/red_select"
+        android:backgroundTint="#ffff00"
+        android:onClick="sideSelect"
+        android:text="YELLOW SIDE"
+        android:textSize="11dp" />
+
+    <Button
+        android:id="@+id/green_select"
+        android:layout_width="70dp"
+        android:layout_height="60dp"
+        android:layout_alignTop="@+id/yellow_select"
+        android:layout_toEndOf="@+id/yellow_select"
+        android:layout_toRightOf="@+id/yellow_select"
+        android:backgroundTint="#00FF00"
+        android:onClick="sideSelect"
+        android:text="GREEN SIDE"
+        android:textSize="11dp" />
+
+    <Button
+        android:id="@+id/white_select"
+        android:layout_width="70dp"
+        android:layout_height="60dp"
+        android:layout_alignStart="@+id/yellow_select"
+        android:layout_alignTop="@+id/orange_select"
+        android:layout_toRightOf="@+id/orange_select"
+        android:backgroundTint="#f8f8ff"
+        android:onClick="sideSelect"
+        android:text="WHITE SIDE"
+        android:textSize="11dp" />
+
+    <Button
+        android:id="@+id/blue_select"
+        android:layout_width="70dp"
+        android:layout_height="60dp"
+        android:layout_alignTop="@+id/white_select"
+        android:layout_toEndOf="@+id/yellow_select"
+        android:layout_toRightOf="@+id/white_select"
+        android:backgroundTint="#0055ff"
+        android:onClick="sideSelect"
+        android:text="BLUE SIDE"
+        android:textSize="11dp" />
+
+    <TextView
+        android:id="@+id/side_select_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/side_status"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="13dp"
+        android:text="please select side\n"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/side_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/errorText"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/solveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/red_select"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_toEndOf="@+id/side_status"
+        android:enabled="false"
+        android:onClick="solveTheCube"
+        android:text="Time To Solve ! ! !" />
+
+    <Button
+        android:id="@+id/clearSideButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/take_pictue_button"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:clickable="true"
+        android:enabled="false"
+        android:nestedScrollingEnabled="false"
+        android:onClick="clearResult"
+        android:text="Clear Side" />
+
+    <TextView
+        android:id="@+id/errorText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/frameLayout"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:text="\n"
+        android:textSize="10dp" />
+
+    <Button
+        android:id="@+id/help_buttom"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/clearSideButton"
+        android:layout_below="@+id/imageView2"
+        android:layout_alignStart="@+id/clearSideButton"
+        android:layout_alignLeft="@+id/clearSideButton"
+        android:layout_alignRight="@+id/clearSideButton"
+        android:nestedScrollingEnabled="false"
+        android:onClick="cameraHelpWindow"
+        android:text="Help" />
+
+
+</RelativeLayout>

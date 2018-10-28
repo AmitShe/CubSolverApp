@@ -2,6 +2,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.cubesolver">
 
+    <uses-permission android:name="android.permission.CAMERA" />
+    <!-- <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> -->
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+    <uses-feature android:name="android.hardware.usb.host" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,20 +18,27 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".manual_inputMainActivity" />
-        <activity android:name=".instructions_General" />
-        <activity android:name=".result_Activity" />
-        <activity android:name=".robot_solver" />
-        <activity android:name=".camera_input" />
-        <activity android:name=".instructions_Camera" />
-        <activity android:name=".instructions_Manual"></activity>
+        <activity android:name=".manual_inputMainActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".instructions_General"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".result_Activity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".robot_solver"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".camera_input"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".instructions_Camera"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".instructions_Manual"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>
